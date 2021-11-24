@@ -8,9 +8,9 @@ jobs:
       - image: circleci/ruby:3.0.2-node
         environment:
           RAILS_ENV: test
-          DB_HOST: 127.0.0.1
-          DB_USERNAME: 'root'
-          DB_PASSWORD: ''
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_USERNAME: 'root'
+          MYSQL_PASSWORD: 'password'
       - image: circleci/mysql:8.0
     executor: ruby/default
     steps:
