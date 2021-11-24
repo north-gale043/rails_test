@@ -5,20 +5,20 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.7.3-node
+      - image: circleci/ruby:3.0.2-node
         environment:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
           DB_USERNAME: 'root'
           DB_PASSWORD: ''
-      - image: circleci/mysql:5.7
+      - image: circleci/mysql:8.0
     executor: ruby/default
     steps:
       - checkout
       - run:
           name: bundler
           command: |  
-            gem install bundler -v 2.2.21
+            gem install bundler
             bundle update
             bundle install
       - run:
